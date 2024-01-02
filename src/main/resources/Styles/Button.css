@@ -1,0 +1,13 @@
+/* styles.css */
+
+.button {
+    -fx-background-color: #9C6F44;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-text-fill: white; /* Set text color to white */
+}
+
+.button:hover {
+    -fx-background-color: #B88C5A; /* Change background color on hover */
+    -fx-effect: glow(#FFFF99, 0.8); /* Add a glow effect on hover */
+}
