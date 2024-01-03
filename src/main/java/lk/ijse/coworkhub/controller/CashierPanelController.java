@@ -69,7 +69,7 @@ public class CashierPanelController {
             scaleT.play();
 
             DropShadow glow = new DropShadow();
-            glow.setColor(Color.CORNFLOWERBLUE);
+            glow.setColor(Color.GOLD);
             glow.setWidth(20);
             glow.setHeight(20);
             glow.setRadius(20);
