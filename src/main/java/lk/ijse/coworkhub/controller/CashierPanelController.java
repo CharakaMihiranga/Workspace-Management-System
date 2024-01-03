@@ -1,8 +1,7 @@
 package lk.ijse.coworkhub.controller;
 
-import javafx.animation.FadeTransition;
-import javafx.animation.ScaleTransition;
-import javafx.animation.TranslateTransition;
+import javafx.animation.*;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,6 +10,7 @@ import javafx.scene.effect.DropShadow;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -19,8 +19,8 @@ import java.io.IOException;
 
 public class CashierPanelController {
 
-    @FXML
-    private AnchorPane root;
+    public StackPane stack;
+
     @FXML
     private AnchorPane cashierPanel;
 
@@ -77,7 +77,7 @@ public class CashierPanelController {
         }
     }
     @FXML
-    private void navigate(MouseEvent event) throws IOException {
+    private void navigate(MouseEvent event) throws Exception {
         if (event.getSource() instanceof ImageView) {
             ImageView icon = (ImageView) event.getSource();
 
@@ -85,31 +85,71 @@ public class CashierPanelController {
 
             switch (icon.getId()) {
                 case "homeIcon":
-               //     root = FXMLLoader.load(this.getClass().getResource("/com/example/layeredarchitecture/manage-customers-form.fxml"));
+                    root = FXMLLoader.load(this.getClass().getResource("/view/CashierPanel/Place-Coffee-Form.fxml"));
                     break;
                 case "logoutIcon":
-                //    root = FXMLLoader.load(this.getClass().getResource("/com/example/layeredarchitecture/manage-items-form.fxml"));
+                    logout();
                     break;
                 case "memberIcon":
-               //     root = FXMLLoader.load(this.getClass().getResource("/com/example/layeredarchitecture/place-order-form.fxml"));
+                    root = FXMLLoader.load(this.getClass().getResource("/view/CashierPanel/Manage-Members-Form.fxml"));
                     break;
-                case "reservationIcon":
-                 //   root = FXMLLoader.load(this.getClass().getResource("/com/example/layeredarchitecture/Search-Orders.fxml"));
+
+                 case "sendMailIcon":
+                    root = FXMLLoader.load(this.getClass().getResource("/view/CashierPanel/Manage-Alerts-Form.fxml"));
                     break;
             }
 
             if (root != null) {
-                Scene subScene = new Scene(root);
-                Stage primaryStage = (Stage) this.root.getScene().getWindow();
-                primaryStage.setScene(subScene);
-                primaryStage.centerOnScreen();
 
-                TranslateTransition tt = new TranslateTransition(Duration.millis(350), subScene.getRoot());
-                tt.setFromX(-subScene.getWidth());
-                tt.setToX(0);
-                tt.play();
+                Scene scene = memberIcon.getScene();
+
+                root.setTranslateY(-scene.getHeight());
+                stack.getChildren().add(root);
+
+                Timeline timeline = new Timeline();
+                KeyValue keyValue = new KeyValue(root.translateYProperty(), 0, Interpolator.EASE_OUT);
+                KeyFrame keyFrame = new KeyFrame(Duration.seconds(0.5), keyValue);
+                timeline.getKeyFrames().add(keyFrame);
+                timeline.play();
+
+// Ensure layout is updated after the animation
+                Platform.runLater(() -> {
+                    stack.requestLayout();
+                });
+                timeline.play();
 
             }
         }
+    }
+
+    private void logout() throws IOException {
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/Login-Form.fxml"));
+        Scene scene = new Scene(anchorPane);
+        Stage stage = (Stage) cashierPanel.getScene().getWindow();
+        stage.setScene(scene);
+        stage.centerOnScreen();
+    }
+
+    @FXML
+    private void navigateToReservationForm(MouseEvent mouseEvent) throws IOException {
+
+        Parent root = FXMLLoader.load(this.getClass().getResource("/view/CashierPanel/Manage-Reservations-Form.fxml"));
+
+        Scene scene = reservationIcon.getScene();
+
+        root.setTranslateY(-scene.getHeight());
+        stack.getChildren().add(root);
+
+        Timeline timeline = new Timeline();
+        KeyValue keyValue = new KeyValue(root.translateYProperty(), 0, Interpolator.EASE_OUT);
+        KeyFrame keyFrame = new KeyFrame(Duration.seconds(0.5), keyValue);
+        timeline.getKeyFrames().add(keyFrame);
+        timeline.play();
+
+// Ensure layout is updated after the animation
+        Platform.runLater(() -> {
+            stack.requestLayout();
+        });
+        timeline.play();
     }
 }
