@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -37,23 +38,23 @@
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Button>
-                  <Label layoutX="107.0" layoutY="45.0" prefHeight="51.0" prefWidth="204.0" text="M00-001">
+                  <Label fx:id="labelMemberId" layoutX="107.0" layoutY="45.0" prefHeight="51.0" prefWidth="204.0" text="M00-001">
                      <font>
                         <Font name="System Bold" size="28.0" />
                      </font>
                   </Label>
-                  <Label layoutX="50.0" layoutY="439.0" prefHeight="51.0" prefWidth="286.0" text="Charaka V Mihiranga">
+                  <Label fx:id="labelFullName" layoutX="50.0" layoutY="439.0" prefHeight="51.0" prefWidth="286.0" text="Charaka V Mihiranga">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
                   </Label>
                   <Line endX="-90.0" endY="535.0" layoutX="454.0" layoutY="50.0" startX="-90.0" startY="90.0" stroke="#543317f1" />
-                  <Label layoutX="113.0" layoutY="542.0" prefHeight="51.0" prefWidth="153.0" text="50 Points" textFill="#e82020">
+                  <Label fx:id="labelPoints" layoutX="113.0" layoutY="542.0" prefHeight="51.0" prefWidth="153.0" text="50 Points" textFill="#e82020">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Label>
-                  <Label layoutX="103.0" layoutY="490.0" prefHeight="51.0" prefWidth="193.0" text="20 Years Old">
+                  <Label fx:id="labelAge" layoutX="103.0" layoutY="490.0" prefHeight="51.0" prefWidth="193.0" text="20 Years Old">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
@@ -68,7 +69,7 @@
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="390.0" layoutY="177.0" prefHeight="41.0" prefWidth="299.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 30;" text="Charaka">
+                  <TextField fx:id="txtFname" editable="false" layoutX="390.0" layoutY="177.0" prefHeight="41.0" prefWidth="299.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 30;">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
@@ -78,7 +79,7 @@
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="393.0" layoutY="281.0" prefHeight="41.0" prefWidth="299.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 30;" text="Student">
+                  <TextField fx:id="txtProfession" editable="false" layoutX="393.0" layoutY="281.0" prefHeight="41.0" prefWidth="299.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 30;">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
@@ -88,7 +89,7 @@
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="395.0" layoutY="382.0" prefHeight="41.0" prefWidth="319.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 30;" text="charakavmihiranga@gmail.com">
+                  <TextField fx:id="txtEmail" editable="false" layoutX="395.0" layoutY="382.0" prefHeight="41.0" prefWidth="319.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 30;">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
@@ -98,7 +99,7 @@
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="396.0" layoutY="487.0" prefHeight="41.0" prefWidth="511.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 30;" text="11/2,Olakumbura,Deniyaya">
+                  <TextField fx:id="txtAdress" editable="false" layoutX="396.0" layoutY="487.0" prefHeight="41.0" prefWidth="511.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 30;">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
@@ -108,13 +109,13 @@
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Label>
-                  <DatePicker layoutX="404.0" layoutY="588.0" prefHeight="30.0" prefWidth="213.0" style="-fx-background-color: D9D9D9;" />
+                  <DatePicker fx:id="dob" editable="false" layoutX="404.0" layoutY="588.0" prefHeight="30.0" prefWidth="213.0" style="-fx-background-color: D9D9D9;" />
                   <Label layoutX="764.0" layoutY="131.0" prefHeight="51.0" prefWidth="193.0" text="Last Name :">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="754.0" layoutY="177.0" prefHeight="41.0" prefWidth="299.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 30;" text="Mihiranga">
+                  <TextField fx:id="txtLName" editable="false" layoutX="754.0" layoutY="177.0" prefHeight="41.0" prefWidth="299.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 30;">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
@@ -124,7 +125,7 @@
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="754.0" layoutY="281.0" prefHeight="41.0" prefWidth="299.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 30;" text="0715825704">
+                  <TextField fx:id="txtMoNumber" editable="false" layoutX="754.0" layoutY="281.0" prefHeight="41.0" prefWidth="299.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 30;">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
@@ -134,12 +135,12 @@
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="754.0" layoutY="381.0" prefHeight="41.0" prefWidth="299.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 30;" text="0715825704">
+                  <TextField fx:id="txtEmergencyNo" editable="false" layoutX="754.0" layoutY="381.0" prefHeight="41.0" prefWidth="299.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 30;">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </TextField>
-                  <Button layoutX="880.0" layoutY="589.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="162.0" style="-fx-background-radius: 10; -fx-background-color: green;" text=" Register" textFill="WHITE">
+                  <Button layoutX="880.0" layoutY="589.0" mnemonicParsing="false" onAction="#registerOnAction" prefHeight="50.0" prefWidth="162.0" style="-fx-background-radius: 10; -fx-background-color: green;" text=" Register" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
@@ -151,6 +152,26 @@
                         </ImageView>
                      </graphic>
                   </Button>
+                  <TextField fx:id="txtSearchBar" layoutX="701.0" layoutY="25.0" onAction="#memberSearchOnAction" prefHeight="41.0" prefWidth="319.0" promptText="Search..." style="-fx-background-color: D9D9D9; -fx-background-radius: 30;">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <effect>
+                        <DropShadow offsetX="4.0" offsetY="5.0">
+                           <color>
+                              <Color opacity="0.30000001192092896" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </TextField>
+                  <ImageView fitHeight="28.0" fitWidth="28.0" layoutX="979.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../assets/memberForm/searchIcon.png" />
+                     </image>
+                     <effect>
+                        <Glow />
+                     </effect>
+                  </ImageView>
                </children>
             </AnchorPane>
          </children>
@@ -164,9 +185,14 @@
             </DropShadow>
          </effect>
          <children>
-            <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="24.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="addMemberIcon" fitHeight="45.0" fitWidth="45.0" layoutX="24.0" layoutY="47.0" onMouseClicked="#AddMemberOnAction" onMouseEntered="#mouseEnterAnimation" onMouseExited="#mouseExistAnimation" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../assets/memberForm/addMember.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="deleteMember" fitHeight="45.0" fitWidth="45.0" layoutX="24.0" layoutY="124.0" onMouseClicked="#deleteMemberOnAction" onMouseEntered="#mouseEnterAnimation" onMouseExited="#mouseExistAnimation" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/memberForm/deleteIcon.png" />
                </image>
             </ImageView>
          </children>
