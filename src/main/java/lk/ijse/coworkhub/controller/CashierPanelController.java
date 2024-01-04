@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.effect.DropShadow;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -39,6 +40,8 @@ public class CashierPanelController {
     @FXML
     private ImageView sendMailIcon;
 
+    private Image panelIcon = null;
+
 
     public void initialize(){
         FadeTransition fadeIn = new FadeTransition(Duration.millis(2000), cashierPanel);
@@ -50,6 +53,32 @@ public class CashierPanelController {
     private void playMouseExitAnimation(MouseEvent event) {
         if (event.getSource() instanceof ImageView) {
             ImageView icon = (ImageView) event.getSource();
+
+            switch (icon.getId()) {
+                case "homeIcon":
+                    panelIcon = new Image("/assets/MainFormIcons/GrayIcons/homeGray.png");
+                    homeIcon.setImage(panelIcon);
+                    break;
+                case "logoutIcon":
+                    panelIcon = new Image("/assets/MainFormIcons/GrayIcons/icons8-log-out-64.png");
+                    logoutIcon.setImage(panelIcon);
+                    break;
+                case "memberIcon":
+                    panelIcon = new Image("/assets/MainFormIcons/GrayIcons/icons8-member-64.png");
+                    memberIcon.setImage(panelIcon);
+                    break;
+
+                case "sendMailIcon":
+                    panelIcon = new Image("/assets/MainFormIcons/GrayIcons/icons8-sent-100.png");
+                    sendMailIcon.setImage(panelIcon);
+                    break;
+
+                case "reservationIcon":
+                    panelIcon = new Image("/assets/MainFormIcons/GrayIcons/icons8-booking-64.png");
+                    reservationIcon.setImage(panelIcon);
+                    break;
+            }
+
             ScaleTransition scaleT = new ScaleTransition(Duration.millis(200), icon);
             scaleT.setToX(1);
             scaleT.setToY(1);
@@ -62,6 +91,32 @@ public class CashierPanelController {
     private void playMouseEnterAnimation(MouseEvent event) {
         if (event.getSource() instanceof ImageView) {
             ImageView icon = (ImageView) event.getSource();
+
+
+            switch (icon.getId()) {
+                case "homeIcon":
+                    panelIcon = new Image("/assets/MainFormIcons/icons8-home-48.png");
+                   homeIcon.setImage(panelIcon);
+                    break;
+                case "logoutIcon":
+                    panelIcon = new Image("/assets/MainFormIcons/icons8-log-out-64.png");
+                    logoutIcon.setImage(panelIcon);
+                    break;
+                case "memberIcon":
+                    panelIcon = new Image("/assets/MainFormIcons/icons8-member-64.png");
+                    memberIcon.setImage(panelIcon);
+                    break;
+
+                case "sendMailIcon":
+                    panelIcon = new Image("/assets/MainFormIcons/icons8-sent-50.png");
+                    sendMailIcon.setImage(panelIcon);
+                    break;
+
+                case "reservationIcon":
+                    panelIcon = new Image("/assets/MainFormIcons/icons8-booking-64.png");
+                    reservationIcon.setImage(panelIcon);
+                    break;
+            }
 
             ScaleTransition scaleT = new ScaleTransition(Duration.millis(200), icon);
             scaleT.setToX(1.2);
@@ -87,9 +142,11 @@ public class CashierPanelController {
                 case "homeIcon":
                     root = FXMLLoader.load(this.getClass().getResource("/view/CashierPanel/Place-Coffee-Form.fxml"));
                     break;
+
                 case "logoutIcon":
                     logout();
                     break;
+
                 case "memberIcon":
                     root = FXMLLoader.load(this.getClass().getResource("/view/CashierPanel/Manage-Members-Form.fxml"));
                     break;
