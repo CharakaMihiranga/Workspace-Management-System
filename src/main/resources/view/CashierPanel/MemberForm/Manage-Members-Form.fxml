@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="MemberPane" prefHeight="832.0" prefWidth="1278.0" style="-fx-background-color: D9D9D9;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.coworkhub.controller.ManageMembersFormController">
+   <children>
+      <StackPane layoutX="24.0" layoutY="130.0" prefHeight="679.0" prefWidth="1100.0" style="-fx-background-color: FFFF; -fx-background-radius: 40;">
+         <effect>
+            <DropShadow offsetX="4.0" offsetY="4.0">
+               <color>
+                  <Color opacity="0.30000001192092896" />
+               </color>
+            </DropShadow>
+         </effect>
+         <children>
+            <AnchorPane fx:id="paneMember" prefHeight="679.0" prefWidth="1100.0" style="-fx-background-color: FFFF; -fx-background-radius: 30;">
+               <children>
+                  <ImageView fx:id="imgMemberPhoto" fitHeight="258.0" fitWidth="247.0" layoutX="43.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../assets/memberForm/memberdetail.png" />
+                     </image>
+                  </ImageView>
+                  <Button layoutX="110.0" layoutY="379.0" mnemonicParsing="false" onAction="#BrowseMemberPicture" prefHeight="40.0" prefWidth="111.0" style="-fx-background-color: green; -fx-background-radius: 20;" text="Add Photo" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="107.0" layoutY="45.0" prefHeight="51.0" prefWidth="204.0" text="M00-001">
+                     <font>
+                        <Font name="System Bold" size="28.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="50.0" layoutY="439.0" prefHeight="51.0" prefWidth="286.0" text="Charaka V Mihiranga">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Line endX="-90.0" endY="535.0" layoutX="454.0" layoutY="50.0" startX="-90.0" startY="90.0" stroke="#543317f1" />
+                  <Label layoutX="113.0" layoutY="542.0" prefHeight="51.0" prefWidth="153.0" text="50 Points" textFill="#e82020">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="103.0" layoutY="490.0" prefHeight="51.0" prefWidth="193.0" text="20 Years Old">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="395.0" layoutY="45.0" prefHeight="51.0" prefWidth="319.0" text="Registration Details" textFill="#563517">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="400.0" layoutY="130.0" prefHeight="51.0" prefWidth="193.0" text="First Name :">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="390.0" layoutY="177.0" prefHeight="41.0" prefWidth="299.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 30;" text="Charaka">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="399.0" layoutY="229.0" prefHeight="51.0" prefWidth="193.0" text="Profession :">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="393.0" layoutY="281.0" prefHeight="41.0" prefWidth="299.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 30;" text="Student">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="407.0" layoutY="331.0" prefHeight="51.0" prefWidth="193.0" text="Email :">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="395.0" layoutY="382.0" prefHeight="41.0" prefWidth="319.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 30;" text="charakavmihiranga@gmail.com">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="406.0" layoutY="435.0" prefHeight="51.0" prefWidth="193.0" text="Address :">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="396.0" layoutY="487.0" prefHeight="41.0" prefWidth="511.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 30;" text="11/2,Olakumbura,Deniyaya">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="406.0" layoutY="540.0" prefHeight="51.0" prefWidth="122.0" text="Date of Birth :">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <DatePicker layoutX="404.0" layoutY="588.0" prefHeight="30.0" prefWidth="213.0" style="-fx-background-color: D9D9D9;" />
+                  <Label layoutX="764.0" layoutY="131.0" prefHeight="51.0" prefWidth="193.0" text="Last Name :">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="754.0" layoutY="177.0" prefHeight="41.0" prefWidth="299.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 30;" text="Mihiranga">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="764.0" layoutY="229.0" prefHeight="51.0" prefWidth="193.0" text="Mobile No :">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="754.0" layoutY="281.0" prefHeight="41.0" prefWidth="299.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 30;" text="0715825704">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="764.0" layoutY="329.0" prefHeight="51.0" prefWidth="193.0" text="Emergency Contact :">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="754.0" layoutY="381.0" prefHeight="41.0" prefWidth="299.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 30;" text="0715825704">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </TextField>
+                  <Button layoutX="880.0" layoutY="589.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="162.0" style="-fx-background-radius: 10; -fx-background-color: green;" text=" Register" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../assets/memberForm/Done.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+      <AnchorPane layoutX="1178.0" layoutY="173.0" prefHeight="500.0" prefWidth="92.0" style="-fx-background-color: FFFF; -fx-background-radius: 40px 0px 0px 40px;" AnchorPane.rightAnchor="0.0">
+         <effect>
+            <DropShadow height="86.22" offsetX="4.0" offsetY="4.0" radius="43.1575" width="88.41">
+               <color>
+                  <Color opacity="0.30000001192092896" />
+               </color>
+            </DropShadow>
+         </effect>
+         <children>
+            <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="24.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/memberForm/addMember.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Label layoutX="44.0" layoutY="30.0" text="Member Management" textFill="#563517">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+         <effect>
+            <Reflection />
+         </effect>
+      </Label>
+   </children>
+</AnchorPane>

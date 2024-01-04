@@ -148,7 +148,7 @@ public class CashierPanelController {
                     break;
 
                 case "memberIcon":
-                    root = FXMLLoader.load(this.getClass().getResource("/view/CashierPanel/Manage-Members-Form.fxml"));
+                    root = FXMLLoader.load(this.getClass().getResource("/view/CashierPanel/MemberForm/Manage-Members-Form.fxml"));
                     break;
 
                  case "sendMailIcon":
