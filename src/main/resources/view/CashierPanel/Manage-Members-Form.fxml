@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
 
 
-<AnchorPane fx:id="MemberPane" prefHeight="832.0" prefWidth="1278.0" style="-fx-background-color: Brown;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.coworkhub.controller.ManageMembersFormController">
-
+<AnchorPane fx:id="MemberPane" prefHeight="832.0" prefWidth="1278.0" style="-fx-background-color: D9D9D9;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.coworkhub.controller.ManageMembersFormController">
+   <children>
+      <StackPane layoutX="6.0" layoutY="272.0" prefHeight="832.0" prefWidth="1278.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: D9D9D9;">
+               <children>
+                  <AnchorPane layoutX="46.0" layoutY="143.0" prefHeight="623.0" prefWidth="530.0" style="-fx-background-color: FFFF;" />
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+   </children>
 </AnchorPane>
