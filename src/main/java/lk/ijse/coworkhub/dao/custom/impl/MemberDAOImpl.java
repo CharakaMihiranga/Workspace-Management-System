@@ -17,6 +17,7 @@ public class MemberDAOImpl implements MemberDAO {
 
     @Override
     public boolean save(Member dto) throws SQLException, ClassNotFoundException {
+
         return SQLUtil.execute("INSERT INTO member VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",
                 dto.getId(),
                 dto.getFirstName(),

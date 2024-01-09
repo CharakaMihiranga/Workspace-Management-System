@@ -214,15 +214,15 @@ public class ManageMembersFormController {
                 boolean isSaved = memberBO.saveMember(new MemberDTO(id,fName,lName,email,address,birthDay,age,profession,loyalty,tel,emergencyTel,memberPicPath));
                 System.out.println(isSaved);
                 if (isSaved){
-                    new Alert(Alert.AlertType.CONFIRMATION,"Member Saved! ");
+                    new Alert(Alert.AlertType.CONFIRMATION,"Member Saved! ").show();
                     clearTheFields();
                     txtSetEditable(false);
                 }
             }
         } catch (SQLException e){
-            new Alert(Alert.AlertType.ERROR,"Failed to register the member! "+e.getMessage());
+            new Alert(Alert.AlertType.ERROR,"Failed to register the member! "+e.getMessage()).show();
         } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
+            new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
         }
     }
 
