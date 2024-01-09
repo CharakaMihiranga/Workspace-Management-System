@@ -16,6 +16,7 @@ import lk.ijse.coworkhub.bo.BOFactory;
 import lk.ijse.coworkhub.bo.MemberBO;
 import lk.ijse.coworkhub.dao.SQLUtil;
 import lk.ijse.coworkhub.dto.MemberDTO;
+import lk.ijse.coworkhub.dto.MessageDTO;
 import lk.ijse.coworkhub.entity.Member;
 
 import javax.imageio.ImageIO;
@@ -188,7 +189,7 @@ public class ManageMembersFormController {
     }
 
     @FXML
-    private void registerOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
+    private void registerOnAction(ActionEvent actionEvent) {
         String id = labelMemberId.getText();
         String fName = txtFname.getText();
         String lName = txtLName.getText();
@@ -203,6 +204,19 @@ public class ManageMembersFormController {
         String tel = txtMoNumber.getText();
         String emergencyTel = txtEmergencyNo.getText();
         String memberPicPath = image.getUrl();
+
+        try {
+
+            boolean validated = true;
+
+            if(validated){
+
+                boolean isSaved = memberBO.saveMember(new MemberDTO(id,fName,lName,email,address,birthDay,age,profession,loyalty,tel,emergencyTel,memberPicPath));
+
+            }
+        } catch (Exception e){
+            new Alert(Alert.AlertType.ERROR,"Failed to register the member! "+e.getMessage());
+        }
     }
 
 

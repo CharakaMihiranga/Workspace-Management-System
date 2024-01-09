@@ -1,5 +1,8 @@
 package lk.ijse.coworkhub.bo;
 
-public interface MemberBO extends SuperBO{
+import lk.ijse.coworkhub.dto.MemberDTO;
+import lk.ijse.coworkhub.dto.MessageDTO;
 
+public interface MemberBO extends SuperBO{
+    boolean saveMember(MemberDTO memberDTO);
 }
