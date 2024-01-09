@@ -4,15 +4,16 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Reservation {
-    private String id;
-    private String packageId;
+public class ReservationDetailDTO {
+
+    private String reservationId;
+    private String memberId;
+    private String memberName;
+    private String packageName;
     private String workspaceId;
-    private Date reservedDate;
-    private double totalPrice;
+    private String workspaceType;
+
 }

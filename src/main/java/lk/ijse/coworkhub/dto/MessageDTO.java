@@ -4,11 +4,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class User {
-    private String empid;
-    private String username;
-    private String password;
+public class MessageDTO {
+    private String content;
+    private Date date;
 }

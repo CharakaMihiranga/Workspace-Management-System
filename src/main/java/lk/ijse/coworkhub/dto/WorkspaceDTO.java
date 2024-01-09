@@ -7,11 +7,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Employee {
+public class WorkspaceDTO {
     private String id;
-    private String name;
-    private String address;
-    private int tel;
-    private String email;
-    private String position;
+    private String description;
+    private String availability;
+    private double price;
+    private String type;
+    private int capacity;
+
 }

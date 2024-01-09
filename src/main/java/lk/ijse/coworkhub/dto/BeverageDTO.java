@@ -4,11 +4,12 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Message {
-    private String content;
-    private Date date;
+public class BeverageDTO {
+    private String id;
+    private String name;
+    private String description;
+    private double Price;
 }

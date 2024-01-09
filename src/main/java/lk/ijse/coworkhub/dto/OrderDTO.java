@@ -9,7 +9,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Order {
+public class OrderDTO {
     private String id;
     private double totalPrice;
     private Date date;

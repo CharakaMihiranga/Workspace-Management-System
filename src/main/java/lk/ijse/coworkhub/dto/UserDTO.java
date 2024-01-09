@@ -7,9 +7,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Beverage {
-    private String id;
-    private String name;
-    private String description;
-    private double Price;
+public class UserDTO {
+    private String empid;
+    private String username;
+    private String password;
 }

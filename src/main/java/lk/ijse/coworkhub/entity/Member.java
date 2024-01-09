@@ -1,6 +1,7 @@
 package lk.ijse.coworkhub.entity;
 
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,5 +23,5 @@ public class Member {
     private double loyalty;
     private String phone;
     private String emergencyContact;
-    private Image memberPic;
+    private String memberPicPath;
 }

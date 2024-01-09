@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Package {
+public class PackageDTO {
     private String packageId;
     private String packageName;
     private String description;

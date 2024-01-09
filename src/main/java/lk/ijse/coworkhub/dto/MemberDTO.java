@@ -1,6 +1,6 @@
 package lk.ijse.coworkhub.dto;
 
-import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,7 +10,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Member {
+public class MemberDTO {
     private String id;
     private String firstName;
     private String lastName;
@@ -22,5 +22,5 @@ public class Member {
     private double loyalty;
     private String phone;
     private String emergencyContact;
-    private Image memberPic;
+    private String memberPicPath;
 }

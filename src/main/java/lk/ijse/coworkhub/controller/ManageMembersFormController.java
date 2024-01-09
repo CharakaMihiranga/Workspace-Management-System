@@ -1,13 +1,9 @@
 package lk.ijse.coworkhub.controller;
 
-import javafx.animation.FadeTransition;
 import javafx.animation.ScaleTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -15,19 +11,29 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
-import javafx.stage.Stage;
 import javafx.util.Duration;
+import lk.ijse.coworkhub.bo.BOFactory;
+import lk.ijse.coworkhub.bo.MemberBO;
+import lk.ijse.coworkhub.dao.SQLUtil;
+import lk.ijse.coworkhub.dto.MemberDTO;
+import lk.ijse.coworkhub.entity.Member;
 
 import javax.imageio.ImageIO;
-
-import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
+import java.sql.Date;
+import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.Period;
 
 public class ManageMembersFormController {
 
 
+    @FXML
+    private ImageView btnUpdate;
+    @FXML
+    private Button btnRegister;
     @FXML
     private AnchorPane MemberPane;
     @FXML
@@ -82,7 +88,14 @@ public class ManageMembersFormController {
 
     DropShadow glow = new DropShadow();
 
+    MemberBO memberBO =
+            (MemberBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.MEMBER);
+
     public void initialize(){
+        generateNextID();
+    }
+
+    private void generateNextID() {
 
     }
 
@@ -96,7 +109,7 @@ public class ManageMembersFormController {
            try {
                if (isImageFile(file)) {
                    String path = file.getAbsolutePath();
-                   image = new Image("file:" + path);
+                   image = new Image(path);
                    imgMemberPhoto.setImage(image);
                } else {
                    new Alert(Alert.AlertType.WARNING, "Invalid file type,Please choose a valid image file").showAndWait();
@@ -128,6 +141,7 @@ public class ManageMembersFormController {
     }
 
     private void txtSetEditable() {
+
         txtFname.setEditable(true);
         txtLName.setEditable(true);
         txtAdress.setEditable(true);
@@ -136,6 +150,7 @@ public class ManageMembersFormController {
         txtProfession.setEditable(true);
         txtMoNumber.setEditable(true);
         dob.setEditable(true);
+
     }
 
     @FXML
@@ -173,9 +188,23 @@ public class ManageMembersFormController {
     }
 
     @FXML
-    private void registerOnAction(ActionEvent actionEvent) {
-
+    private void registerOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
+        String id = labelMemberId.getText();
+        String fName = txtFname.getText();
+        String lName = txtLName.getText();
+        String email = txtEmail.getText();
+        String address = txtAdress.getText();
+        Date birthDay = Date.valueOf(dob.getValue());
+        LocalDate now = LocalDate.now();
+        Period period = Period.between(birthDay.toLocalDate(), now);
+        int age = period.getYears();
+        String profession = txtProfession.getText();
+        double loyalty = 50.00;
+        String tel = txtMoNumber.getText();
+        String emergencyTel = txtEmergencyNo.getText();
+        String memberPicPath = image.getUrl();
     }
+
 
     @FXML
     private void memberSearchOnAction(ActionEvent actionEvent) {
@@ -183,5 +212,9 @@ public class ManageMembersFormController {
 
     @FXML
     private void deleteMemberOnAction(MouseEvent mouseEvent) {
+    }
+
+    @FXML
+    private void updateMemberOnAction(MouseEvent mouseEvent) {
     }
 }

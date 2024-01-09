@@ -1,4 +1,5 @@
 package lk.ijse.coworkhub.bo;
 
-public interface MemberBO {
+public interface MemberBO extends SuperBO{
+
 }

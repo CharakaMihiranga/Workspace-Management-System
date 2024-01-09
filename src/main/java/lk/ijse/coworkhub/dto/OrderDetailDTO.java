@@ -9,7 +9,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class OrderDetail {
+public class OrderDetailDTO {
 
     private String orderId;
     private String beverageId;
