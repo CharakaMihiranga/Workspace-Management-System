@@ -2,22 +2,24 @@ package lk.ijse.coworkhub.dao.custom.impl;
 
 import lk.ijse.coworkhub.dao.custom.MemberDAO;
 import lk.ijse.coworkhub.dto.MemberDTO;
+import lk.ijse.coworkhub.entity.Member;
 
 import java.util.ArrayList;
 
 public class MemberDAOImpl implements MemberDAO {
+
     @Override
-    public ArrayList<MemberDTO> getAll() {
+    public ArrayList<Member> getAll() {
         return null;
     }
 
     @Override
-    public boolean save(MemberDTO dto) {
+    public boolean save(Member dto) {
         return false;
     }
 
     @Override
-    public boolean update(MemberDTO dto) {
+    public boolean update(Member dto) {
         return false;
     }
 
@@ -37,7 +39,7 @@ public class MemberDAOImpl implements MemberDAO {
     }
 
     @Override
-    public MemberDTO search(String id) {
+    public Member search(String id) {
         return null;
     }
 }
