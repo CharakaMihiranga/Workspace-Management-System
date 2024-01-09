@@ -80,6 +80,8 @@ public class ManageMembersFormController {
 
     boolean addMemberClicked = false;
 
+    DropShadow glow = new DropShadow();
+
     public void initialize(){
 
     }
@@ -146,7 +148,7 @@ public class ManageMembersFormController {
             scaleT.setToY(1.2);
             scaleT.play();
 
-            DropShadow glow = new DropShadow();
+
             glow.setColor(Color.CORNFLOWERBLUE);
             glow.setWidth(20);
             glow.setHeight(20);
@@ -172,6 +174,7 @@ public class ManageMembersFormController {
 
     @FXML
     private void registerOnAction(ActionEvent actionEvent) {
+
     }
 
     @FXML

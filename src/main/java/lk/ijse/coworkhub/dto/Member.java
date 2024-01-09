@@ -1,4 +1,4 @@
-package lk.ijse.coworkhub.entity;
+package lk.ijse.coworkhub.dto;
 
 import javafx.scene.image.Image;
 import lombok.AllArgsConstructor;
