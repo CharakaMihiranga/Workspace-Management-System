@@ -137,20 +137,20 @@ public class ManageMembersFormController {
 
     @FXML
     private void AddMemberOnAction(MouseEvent mouseEvent) {
-        txtSetEditable();
+        txtSetEditable(true);
         addMemberClicked = true;
     }
 
-    private void txtSetEditable() {
+    private void txtSetEditable(boolean action) {
 
-        txtFname.setEditable(true);
-        txtLName.setEditable(true);
-        txtAdress.setEditable(true);
-        txtEmergencyNo.setEditable(true);
-        txtEmail.setEditable(true);
-        txtProfession.setEditable(true);
-        txtMoNumber.setEditable(true);
-        dob.setEditable(true);
+        txtFname.setEditable(action);
+        txtLName.setEditable(action);
+        txtAdress.setEditable(action);
+        txtEmergencyNo.setEditable(action);
+        txtEmail.setEditable(action);
+        txtProfession.setEditable(action);
+        txtMoNumber.setEditable(action);
+        dob.setEditable(action);
 
     }
 
@@ -212,11 +212,29 @@ public class ManageMembersFormController {
             if(validated){
 
                 boolean isSaved = memberBO.saveMember(new MemberDTO(id,fName,lName,email,address,birthDay,age,profession,loyalty,tel,emergencyTel,memberPicPath));
-
+                System.out.println(isSaved);
+                if (isSaved){
+                    new Alert(Alert.AlertType.CONFIRMATION,"Member Saved! ");
+                    clearTheFields();
+                    txtSetEditable(false);
+                }
             }
-        } catch (Exception e){
+        } catch (SQLException e){
             new Alert(Alert.AlertType.ERROR,"Failed to register the member! "+e.getMessage());
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
+    }
+
+    private void clearTheFields() {
+        txtFname.clear();
+        txtLName.clear();
+        txtAdress.clear();
+        txtEmergencyNo.clear();
+        txtEmail.clear();
+        txtProfession.clear();
+        txtMoNumber.clear();
+        dob.setValue(LocalDate.now());
     }
 
 
